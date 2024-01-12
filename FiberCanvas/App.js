@@ -1,26 +1,31 @@
 import React, {useState, Component} from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { Button, StyleSheet, Text, View, Pressable } from 'react-native';
-import { Counter } from '../../Counter';
+import { StyleSheet, Text, View, Pressable } from 'react-native';
 
 
 export default function App(){
+  const[number, setNumber]=useState(0)
+  const increment =()=>{
+    setNumber(number+1);
+  };
+  const decrement=()=>{
+    setNumber(number-1);
+  };
   return (
     <View style={styles.container}>
      
       <View className='counter' style={styles.counter}>
         <Text className='counterName' style={styles.counterName}>Row Counter</Text>
+
         <View className='Display' style={styles.Display}>
-          
+          <Text className='DisplayNumber' style={styles.DisplayNumber}>{number}</Text>
         </View>
-        return(
-          <Counter />
-        )
-         <Pressable style={styles.button} >
-          <Text style={styles.Sign} onClickFunc={increment}>+</Text>
+        
+         <Pressable style={styles.button}  >
+          <Text className= 'Sign' style={styles.Sign} onPress={increment}>+</Text>
          </Pressable>
          <Pressable style={styles.button}>
-        <Text style={styles.Sign} onClickFunc={decrement}>-</Text>
+        <Text className='Sign' style={styles.Sign} onPress={decrement} >-</Text>
         </Pressable>
       </View>
       <StatusBar style="auto" />
@@ -64,7 +69,7 @@ const styles = StyleSheet.create({
     position: 'fixed',
     justifyContent: 'center',
     alignItems: 'center',
-    marginLeft: '50',
+    borderRadius:26,
   },
   button: {
           backgroundColor: '#BB79E3',
@@ -83,4 +88,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     fontSize:'45',
   },
+  DisplayNumber:{
+    fontSize:'55',
+    color:'#304476'
+  }
 });
