@@ -1,23 +1,26 @@
-import React from 'react';
+import React, {useState, Component} from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { Button, StyleSheet, Text, View, Pressable } from 'react-native';
+import { Counter } from '../../Counter';
 
 
-
-export default function App() {
+export default function App(){
   return (
     <View style={styles.container}>
      
       <View className='counter' style={styles.counter}>
         <Text className='counterName' style={styles.counterName}>Row Counter</Text>
-        <View className='Display' style={styles.Display}></View>
-        
-      
+        <View className='Display' style={styles.Display}>
+          
+        </View>
+        return(
+          <Counter />
+        )
          <Pressable style={styles.button} >
-          <Text style={styles.Sign}>+</Text>
+          <Text style={styles.Sign} onClickFunc={increment}>+</Text>
          </Pressable>
          <Pressable style={styles.button}>
-        <Text style={styles.Sign}>-</Text>
+        <Text style={styles.Sign} onClickFunc={decrement}>-</Text>
         </Pressable>
       </View>
       <StatusBar style="auto" />
