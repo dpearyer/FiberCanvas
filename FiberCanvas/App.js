@@ -2,6 +2,8 @@ import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { Button, StyleSheet, Text, View, Pressable } from 'react-native';
 
+
+
 export default function App() {
   return (
     <View style={styles.container}>
@@ -10,6 +12,7 @@ export default function App() {
         <Text className='counterName' style={styles.counterName}>Row Counter</Text>
         <View className='Display' style={styles.Display}></View>
         
+      
          <Pressable style={styles.button} >
           <Text style={styles.Sign}>+</Text>
          </Pressable>
@@ -29,13 +32,16 @@ const styles = StyleSheet.create({
     backgroundColor: '#F1B8D7',
     alignItems: 'center',
     justifyContent: 'center',
+    paddingTop: 70,
   },
   counterName:{
     textAlign:'center',
     marginTop: 5,
     marginBottom:10,
     color: 'white',
-    fontSize: '18'
+    fontSize: '18',
+    fontFamily: 'Patrick Hand-Cursive',
+
   },
   counter:{
     width: 294,
