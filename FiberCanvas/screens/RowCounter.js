@@ -1,7 +1,7 @@
 
 import React, {useState} from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Pressable, Button } from 'react-native';
+import { StyleSheet, Text, View, Pressable} from 'react-native';
 
 export default function RowCounter() {
     
@@ -41,7 +41,7 @@ export default function RowCounter() {
         backgroundColor: '#F1B8D7',
         alignItems: 'center',
         justifyContent: 'center',
-        paddingTop: 70,
+        paddingTop: 20,
     },
     counterName:{
         textAlign:'center',
@@ -55,7 +55,7 @@ export default function RowCounter() {
     counter:{
         width: 294,
         height: 497,
-        backgroundColor: '#70C8DB',
+        backgroundColor: '#A56186',
         borderRadius: 46,
         padding: 35,
         justifyContent:'center',
@@ -73,10 +73,10 @@ export default function RowCounter() {
         borderRadius:26,
     },
     button: {
-            backgroundColor: '#BB79E3',
+            backgroundColor: '#560845',
             justifyContent: 'center',
             alignItems: 'center',
-            borderRadius: 150,
+            borderRadius: 25,
             height:84,
             width: 84,
             marginBottom:15,
