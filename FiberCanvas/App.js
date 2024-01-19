@@ -1,14 +1,23 @@
-import React, {useState} from 'react';
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Pressable } from 'react-native';
 
-export default function RowCounter() {
+import 'react-native-gesture-handler';
+import React, {useState} from 'react';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { NavigationContainer } from '@react-navigation/native';
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View, Pressable, TouchableOpacity } from 'react-native';
+import { FontAwesome } from 'react-native-vector-icons';
+
+  
+
+  function RowCounter() {
     
     const[number, setNumber]=useState(0)
        
     return (
+        
         <View style={styles.container}>
         
+  
         <View className='counter' style={styles.counter}>
             <Text className='counterName' style={styles.counterName}>Row Counter</Text>
     
@@ -27,7 +36,9 @@ export default function RowCounter() {
     
         </View>
     );
-    }
+  }
+
+
     
     const styles = StyleSheet.create({
     container: {
@@ -89,3 +100,27 @@ export default function RowCounter() {
     },
     
     });
+
+    RowCounter.navigationOptions = {
+        title: "RowCounter"
+      };
+      
+  const Drawer = createDrawerNavigator();
+
+  function MyDrawer() {
+    return (
+      <Drawer.Navigator>
+        <Drawer.Screen name="RowCounter" component={RowCounter} />
+      </Drawer.Navigator>
+    );
+  }
+      
+  
+
+  export default function App() {
+    return (
+      <NavigationContainer>
+        <MyDrawer />
+      </NavigationContainer>
+    );
+  }
