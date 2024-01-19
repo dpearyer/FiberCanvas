@@ -1,25 +1,20 @@
 
 import React, {useState} from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Pressable, TouchableOpacity } from 'react-native';
-import { FontAwesome } from 'react-native-vector-icons';
-
-
+import { StyleSheet, Text, View, Pressable, Button } from 'react-native';
 
 export default function RowCounter() {
     
     const[number, setNumber]=useState(0)
+    
        
     return (
         
-        <View style={styles.container}>
+      <View style={styles.container}>
         
-        <View style={{ flexDirection: 'row', alignItems: 'center', padding: 10 }}>
-        <TouchableOpacity onPress={() => navigation.openDrawer()}>
-          <FontAwesome name="bars" size={30} color="black" />
-        </TouchableOpacity>
-        <Text style={{ marginLeft: 10 }}><img src='/assets/knitting.png'></img></Text>
-        </View>
+        
+        
+
         <View className='counter' style={styles.counter}>
             <Text className='counterName' style={styles.counterName}>Row Counter</Text>
     
@@ -38,9 +33,9 @@ export default function RowCounter() {
     
         </View>
     );
-    }
-    
-    const styles = StyleSheet.create({
+  }
+
+  const styles = StyleSheet.create({
     container: {
         flex:1,
         backgroundColor: '#F1B8D7',
@@ -104,4 +99,3 @@ export default function RowCounter() {
     RowCounter.navigationOptions = {
         title: "RowCounter"
       };
-      
